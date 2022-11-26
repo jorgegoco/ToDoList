@@ -61,7 +61,7 @@ const addDynamicElements = (toDoList, i) => {
 
   document.querySelector('.footerText').addEventListener('click', () => {
     toDoList.deleteChecked();
-    items.querySelectorAll('.task').forEach(element => {
+    items.querySelectorAll('.task').forEach((element) => {
       if (element.firstChild.checked) {
         element.remove();
       }
@@ -73,17 +73,16 @@ const addDynamicElements = (toDoList, i) => {
 
   taskToDo.addEventListener('dragstart', () => {
     current = idNumber(taskToDo.parentNode.id);
-    console.log(current);
   });
 
   taskToDo.addEventListener('dragover', (e) => e.preventDefault());
 
   taskToDo.addEventListener('drop', (e) => {
     e.preventDefault();
-    let dropValue = idNumber(taskToDo.parentNode.id);
-      if (dropValue !== current) {
+    const dropValue = idNumber(taskToDo.parentNode.id);
+    if (dropValue !== current) {
       toDoList.swapTasks(current - 1, dropValue - 1);
-        if (current < dropValue) {
+      if (current < dropValue) {
         document.getElementById(`task${dropValue}`).after(document.getElementById(`task${current}`));
       } else {
         document.getElementById(`task${dropValue}`).before(document.getElementById(`task${current}`));
@@ -91,6 +90,6 @@ const addDynamicElements = (toDoList, i) => {
       renameIds();
     }
   });
-}
+};
 
 export { addDynamicElements as default };

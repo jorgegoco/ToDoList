@@ -1,6 +1,4 @@
-export const idNumber = str => {
-  return Number(str.replace(/\D/g, ''));
-}
+export const idNumber = (str) => Number(str.replace(/\D/g, ''));
 
 export const renameIds = () => {
   const divs = Array.from(document.querySelectorAll('.task')) || [];
@@ -9,4 +7,4 @@ export const renameIds = () => {
       divs[i].id = `task${i + 1}`;
     }
   }
-}
+};

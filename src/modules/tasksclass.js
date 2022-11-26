@@ -44,7 +44,6 @@ export default class Tasks {
 
   swapTasks = (currentpos, droppedpos) => {
     if (currentpos < droppedpos) {
-      console.log('bad')
       for (let i = currentpos; i < droppedpos; i += 1) {
         const temp = this.arrayTasks[i];
         this.arrayTasks[i] = this.arrayTasks[i + 1];
@@ -54,7 +53,6 @@ export default class Tasks {
         this.arrayTasks[i].index = i + 1;
       }
     } else {
-      console.log('good')
       for (let i = currentpos; i > droppedpos; i -= 1) {
         const temp = this.arrayTasks[i];
         this.arrayTasks[i] = this.arrayTasks[i - 1];

@@ -11,5 +11,5 @@ for (let i = 0; i < toDoList.arrayTasks.length; i += 1) {
 document.querySelector('.addTaskText').addEventListener('change', (e) => {
   const addElement = toDoList.addTask(e.target.value);
   e.target.value = '';
-  if(addElement) addDynamicElements(toDoList, toDoList.arrayTasks.length - 1);
+  if (addElement) addDynamicElements(toDoList, toDoList.arrayTasks.length - 1);
 });
