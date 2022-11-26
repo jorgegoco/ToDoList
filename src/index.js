@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 import Tasks from './modules/tasksclass.js';
 import addDynamicElements from './modules/dynamic.js';
 
